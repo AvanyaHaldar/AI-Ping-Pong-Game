@@ -1,0 +1,52 @@
+body{
+    background-size: cover;
+}
+.heading {
+    width: 100%;
+    text-align: left;
+    background-color: rgb(255, 101, 186);
+    color: rgb(25, 0, 248);
+    font-size: 25px;
+    font-family: comic sans ms;
+    font-weight: bold;
+
+}
+
+#instructions {
+    background-color: aqua;
+    font-size: 20px;
+}
+
+.heading h3 {
+    display: inline;
+}
+
+.heading button {
+    float: right;
+    border: 1px solid rgb(222, 137, 248);
+}
+
+#start, #status, #restart {
+    font-size: 22px;
+}
+
+.modal-dialog {
+    width: 70%;
+}
+
+.modal-body {
+    text-align: left;
+    font-size: 20px;
+}
+
+h4 {
+    background-color: rgb(205, 119, 255);
+    color: rgb(255, 255, 255);
+    line-height: 2;
+}
+
+canvas {
+    border: 3px solid white;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px white;
+}
