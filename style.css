@@ -28,6 +28,11 @@ body{
 
 #start, #status, #restart {
     font-size: 22px;
+    margin-top: 0px;
+}
+
+#restart{
+    margin-top: 0;
 }
 
 .modal-dialog {
@@ -40,17 +45,19 @@ body{
 }
 
 h4 {
-    background-color: rgb(253, 124, 221);
+    background-color: rgb(255, 166, 49);
     line-height: 2;
     margin: 0px;
     font-size: 22px;
     font-family: comic sans ms;
     font-weight: bold;
-    text-shadow: 5px 5px 3px rgb(195, 0, 255);
+    text-shadow: 5px 5px 3px rgb(255, 0, 0);
+
 }
 
 canvas {
     border: 3px solid white;
     border-radius: 20px;
     box-shadow: 5px 5px 5px white;
+    margin-top: 140px;
 }
