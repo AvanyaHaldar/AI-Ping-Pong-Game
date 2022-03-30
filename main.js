@@ -13,12 +13,19 @@ function setup() {
     video = createCapture(VIDEO);
     video.hide();   
     poseNet=ml5.poseNet(video,modelLoaded);
-    posenet.on('pose',gotPoses);
+    poseNet.on('pose',gotPoses);
 }
 
 
 function draw() {
     image(video, 0, 0, 550, 448);
+
+    fill("magenta");
+    stroke("purple");
+
+    if (scorerightWrist > 0.2) {
+        circle(rightWrist_x, rightWrist_y, 20);
+}
 }
 
 function modelLoaded() {
@@ -27,13 +34,9 @@ function modelLoaded() {
 
 function gotPoses(result) {
 	if (result.length > 0) {
-		rightWrist_x = results[0].pose.rightWrist.x;
-        rightWrist_y = results[0].pose.rightWrist.y;
+		rightWrist_x = result[0].pose.rightWrist.x;
+        rightWrist_y = result[0].pose.rightWrist.y;
         console.log("rightWrist_x = " + rightWrist_x );
 		console.log(result);
 	}
-}
-
-function gotResult() {
-    
 }
