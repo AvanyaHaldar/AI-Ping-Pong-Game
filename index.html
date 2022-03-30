@@ -1,7 +1,8 @@
-<html>
+<!--created by prashant shukla-->
+<!DOCTYPE html>
 <html>
     <head>
-        <title>AI Ping Pong </title>
+        <title>AI Ping Pong Game</title>
  
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -13,12 +14,12 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/addons/p5.sound.min.js"></script>   
     </head>
-    <body background="https://thumbs.dreamstime.com/b/neon-light-brick-walls-not-plastered-background-texture-lighting-effect-red-blue-vertical-empty-basement-wall-190816285.jpg">
+    <body background="background.jpg">
         <center>
 
-            <div class="btn heading" id="heading">
+            <div class="btn btn-warning heading">
               <h3>AI Ping Pong Game </h3>
-              <button class="btn" id="instructions"  data-toggle="modal" data-target="#myModal">Instruction</button>
+              <button class="btn btn-warning"  data-toggle="modal" data-target="#myModal">Instruction</button>
             </div>
       
             <br><br>
@@ -28,27 +29,33 @@
             <br><br>
             <div id="canvas"></div>
             <br><br>
-            <button onclick="restart()" class="btn btn-warning" id="restart">Restart</button>
+            <button onclick="restart()" class="btn btn-danger" id="restart">Restart</button>
             <br><br>
+            
             <h4>Developed By : Avanya Haldar</h4>
-            <div class="modal fade" id="myModal">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button class="close" data-dismiss="modal">&times</button>
-                            <h3>Instructions</h3>
-                        </div>
-                        <div class="modal-body">
-                            <ol>
-                                <li>First keep your laptop screen straight</li>
-                                    <li> yourself approximately 3-4 feet away from the laptop</li>
-                                    <li>Move your right wrist in an ascending and decending manner, a red dot should appear on your right wrist</li>
-                                    <li>Now press the play button, and again move yourself 3-4 feet away from laptop</li>
-                                <li>The red paddel is your paddel, that will move as per the movement of your right wrist</li>
-                            </ol>
-                        </div>
+        
+            <div id="myModal" class="modal fade ">
+              <div class="modal-dialog" >
+                <!-- Modal content-->
+                <div class="modal-content">
+            
+                  <div class="modal-header">
+                    <button class="close" data-dismiss="modal">&times;</button>
+                    <h3>Instructions</h3>
+                  </div>
+            
+                   <div class="modal-body">
+                       <ol>
+                           <li>First keep your laptop screen straight</li>
+                           <li>Move yourself approximately 3-4 feet away from the laptop</li>
+                           <li>Move your right wrist in an ascending and decending manner, a red dot should appear on your right wrist</li>
+                           <li>Now press the play button, and again move yourself 3-4 feet away from laptop</li>
+                           <li>The red paddel is your paddel, that will move as per the movement of your right wrist</li>
+                       </ol>
                     </div>
+      
                 </div>
+              </div>
             </div>
       </center>
 

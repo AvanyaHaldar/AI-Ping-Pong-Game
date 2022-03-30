@@ -26,13 +26,13 @@ body{
     border: 1px solid rgb(222, 137, 248);
 }
 
-#start, #status, #restart {
+#start, #status {
     font-size: 22px;
-    margin-top: 0px;
 }
 
 #restart{
-    margin-top: 0;
+    margin-bottom: 50px;
+    font-size: 22px;
 }
 
 .modal-dialog {
@@ -62,5 +62,5 @@ canvas {
     border: 3px solid white;
     border-radius: 20px;
     box-shadow: 5px 5px 5px white;
-    margin-top: 120px;
+    margin-top: 10px;
 }
