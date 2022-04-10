@@ -1,6 +1,3 @@
-
-
-
 var paddle2 =10,paddle1=10;
 
 var paddle1X = 10,paddle1Height = 110;
@@ -25,9 +22,13 @@ rightWristY = 0;
 rightWristX = 0;
 scoreRightWrist = 0;
 
-game_status="";
+game_status = "";
 
- 
+
+ function preload() {
+  ball_touch_paddel = loadSound("ball_touch_paddel.wav");
+  missed = loadSound("missed.wav");
+}
 
 function setup(){
 var canvas =  createCanvas(700,600);
@@ -59,13 +60,12 @@ function gotPoses(results)
 
 function startGame()
 {
-   game_status="start";
- document.getElementById("status").innerHTML="Game Is Loaded";
+  game_status = "start";
+  document.getElementById("status").innerHTML = "Game Is Loading";
 }
 
 function draw(){
-if(game_status=="start")
-{
+
   background(0); 
   image(video, 0, 0, 700, 600);
 
@@ -84,7 +84,9 @@ if(game_status=="start")
     circle(rightWristX, rightWristY, 30);
   }
 
-
+  if(game_status == "start")
+  {
+    document.getElementById("status").innerHTML = "Game Is Loaded";
     //funtion paddleInCanvas call 
     paddleInCanvas();
         
@@ -166,11 +168,11 @@ function move(){
   if (ball.x-2.5*ball.r/2< 0){
   if (ball.y >= paddle1Y&& ball.y <= paddle1Y + paddle1Height) {
     ball.dx = -ball.dx+0.5; 
-    
+    ball_touch_paddel.play();
   }
   else{
     pcscore++;
-    
+    missed.play();
     reset();
     navigator.vibrate(100);
   }
@@ -183,10 +185,10 @@ if(pcscore ==4){
     stroke("white");
     textSize(25);
     text("Game Over!",width/2,height/2);
-    text("Reload the page!",width/2,height/2+30)
+    text("Press Restart button to play again!",width/2,height/2+30)
     noLoop();
     pcscore = 0;
- }
+}
    if(ball.y+ball.r > height || ball.y-ball.r <0){
        ball.dy =- ball.dy;
    }   
@@ -206,13 +208,18 @@ function models(){
 
 //this function help to not go te paddle out of canvas
 function paddleInCanvas(){
-  if(paddle1Y+paddle1Height > height){
-    paddle1Y=height-paddle1Height;
+  if(mouseY+paddle1Height > height){
+    mouseY=height-paddle1Height;
   }
-  if(paddle1Y < 0){
-    paddle1Y =0;
+  if(mouseY < 0){
+    mouseY =0;
   }
  
   
 }
 
+function restart()
+{
+  pcscore = 0;
+  loop();
+}
